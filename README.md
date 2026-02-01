@@ -1,6 +1,7 @@
 # Project1
-
-### How to run Flask (ik its heading 3 deal with it)
+### Simple Project Summary
+A website for a nail salon that lets customers book appointments online, sign in/manage their bookings, and view/leave reviews. It should also give the salon owner simple admin tools to see and manage the schedule and photos.
+### How to run Flask 
 
 To compile this code first clone the repository:
 ```
