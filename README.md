@@ -26,3 +26,25 @@ To run the app do
 ```
 flask run
 ```
+### How to connect to the database
+To create a PostgreSQL Database:
+```
+sudo -u postgres psql
+```
+```
+postgres=# CREATE DATABASE flask_db;
+```
+Enter Username and Password and then grant privileges
+```
+postgres=# GRANT ALL PRIVILEGES ON DATABASE flask_db TO username;
+```
+Also, make an .env file to hide your credentials
+```
+DATABASE_URL = postgresql://username:password@localhost/name_of_db
+```
+
+After you setup your database, run the app to test the database
+```
+flask run
+```
+At [http://localhost:5000/test-db](http://localhost:5000/test-db), the database will show you if the connection is successful or not.
