@@ -1,6 +1,7 @@
 # Project1
+This project is build and ran with WSL which allows me to run commands with the use of linux on Windows.
 
-### How to run Flask (ik its heading 3 deal with it)
+### How to set up Virtual Environment and install python libraries.
 
 To compile this code first clone the repository:
 ```
@@ -12,39 +13,34 @@ python -m venv venv
 ```
 Activate the virtual environment
 ```
-source venv\Scripts\activate
+source venv/bin/activate
 ```
 Download requirements.txt
 ```
 pip install -r requirements.txt
 ```
-After everything is setup, install flask
-```
-pip install flask
-```
-To run the app do
-```
-flask run
-```
-### How to connect to the database
+### How to create PostgresSQL DB and run Flask
 To create a PostgreSQL Database:
 ```
 sudo -u postgres psql
 ```
+This creates the database locally
 ```
-postgres=# CREATE DATABASE flask_db;
-```
-Enter Username and Password and then grant privileges
-```
-postgres=# GRANT ALL PRIVILEGES ON DATABASE flask_db TO username;
+CREATE DATABASE flask_db;
+CREATE USER username WITH PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE flask_db TO username;
 ```
 Also, make an .env file to hide your credentials
 ```
 DATABASE_URL = postgresql://username:password@localhost/flask_db
 ```
-
-After you setup your database, run the app to test the database
+After you setup your database, run the app in the root directory
 ```
+flask --app server.app run
+```
+OR run the app by going into the server directory and running it there
+```
+cd server
 flask run
 ```
 At [http://localhost:5000/test-db](http://localhost:5000/test-db), the database will show you if the connection is successful or not.
