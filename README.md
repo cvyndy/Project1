@@ -1,4 +1,9 @@
 # Project1
+
+This project is build and ran with WSL which allows me to run commands with the use of linux on Windows.
+
+### How to set up Virtual Environment and install python libraries.
+
 ### Simple Project Summary
 A website for a nail salon that lets customers book appointments online, sign in/manage their bookings, and view/leave reviews. It should also give the salon owner simple admin tools to see and manage the schedule and photos.
 
@@ -14,17 +19,34 @@ python -m venv venv
 ```
 Activate the virtual environment
 ```
-source venv\Scripts\activate
+source venv/bin/activate
 ```
 Download requirements.txt
 ```
 pip install -r requirements.txt
 ```
-After everything is setup, install flask
+### How to create PostgresSQL DB and run Flask
+To create a PostgreSQL Database:
 ```
-pip install flask
+sudo -u postgres psql
 ```
-To run the app do
+This creates the database locally
 ```
+CREATE DATABASE flask_db;
+CREATE USER username WITH PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE flask_db TO username;
+```
+Also, make an .env file to hide your credentials
+```
+DATABASE_URL = postgresql://username:password@localhost/flask_db
+```
+After you setup your database, run the app in the root directory
+```
+flask --app server.app run
+```
+OR run the app by going into the server directory and running it there
+```
+cd server
 flask run
 ```
+At [http://localhost:5000/test-db](http://localhost:5000/test-db), the database will show you if the connection is successful or not.
