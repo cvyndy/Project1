@@ -40,7 +40,7 @@ postgres=# GRANT ALL PRIVILEGES ON DATABASE flask_db TO username;
 ```
 Also, make an .env file to hide your credentials
 ```
-DATABASE_URL = postgresql://username:password@localhost/name_of_db
+DATABASE_URL = postgresql://username:password@localhost/flask_db
 ```
 
 After you setup your database, run the app to test the database
