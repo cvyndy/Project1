@@ -50,3 +50,14 @@ cd server
 flask run
 ```
 At [http://localhost:5000/test-db](http://localhost:5000/test-db), the database will show you if the connection is successful or not.
+
+### How the Black Lint Check Pipeline works
+This pipeline uses GitHub Actions with Python Black to make sure all Python files are formatted correctly. This pipeline runs on every push and pull request.
+The workflow file is located at
+```
+.github/workflows/black.yml
+```
+If there is an error, fix formating locally through
+```
+python -m black .
+```
