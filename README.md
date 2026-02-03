@@ -51,6 +51,19 @@ flask run
 ```
 At [http://localhost:5000/test-db](http://localhost:5000/test-db), the database will show you if the connection is successful or not.
 
+### How to run Python Black (a linting tool to automatically format your python code)
+First install black with
+```
+pip install black
+```
+To run black on a specific file in a specific file(I used app.py), cd into the directory
+```
+python -m black insert_file
+```
+OR to run black on every python file in the main directory run
+```
+python -m black . --check --verbose
+```
 ### How the Black Lint Check Pipeline works
 This pipeline uses GitHub Actions with Python Black to make sure all Python files are formatted correctly. This pipeline runs on every push and pull request.
 The workflow file is located at
@@ -61,3 +74,4 @@ If there is an error, fix formating locally through
 ```
 python -m black .
 ```
+
