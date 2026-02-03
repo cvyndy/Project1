@@ -64,4 +64,14 @@ OR to run black on every python file in the main directory run
 ```
 python -m black . --check --verbose
 ```
+### How the Black Lint Check Pipeline works
+This pipeline uses GitHub Actions with Python Black to make sure all Python files are formatted correctly. This pipeline runs on every push and pull request.
+The workflow file is located at
+```
+.github/workflows/black.yml
+```
+If there is an error, fix formating locally through
+```
+python -m black .
+```
 
