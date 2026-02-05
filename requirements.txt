@@ -5,3 +5,5 @@ SQLAlchemy==2.0.46
 psycopg2-binary==2.9.11
 python-dotenv==1.2.1
 black == 26.1.0
+node == v20.20.0
+npm == 10.8.2

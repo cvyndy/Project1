@@ -74,4 +74,29 @@ If there is an error, fix formating locally through
 ```
 python -m black .
 ```
+### How I created the React App
+I noticed that Next.js requires Node version 20 or higher, but I first installed nvm and updated Node. 
 
+Install nvm and reload the terminal
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
+```
+Install Node 20
+```
+nvm install 20
+nvm use 20
+nvm alias default 20
+```
+Create the React app inside the client folder using Next.js
+```
+npx create-next-app@latest client
+```
+Go into the client directory and install the dependencies 
+```
+npm install
+```
+Run the app
+```
+npm run dev
+```
