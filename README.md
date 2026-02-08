@@ -102,5 +102,5 @@ npm run dev
 ```
  ### Database Schema
 
-![Database Schema](schema.drawio.png)
+![Database Schema](db_schema.png)
  
